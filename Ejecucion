@@ -1,0 +1,94 @@
+class Calculadora {
+
+private:
+    float x, y;
+
+public:
+    Calculadora(float  _x, float  _y){
+        x=_x;
+        y=_y;
+    };
+
+    void sumar();
+    void restar();
+    void multiplicar();
+};
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+int main() {
+
+    int opt;
+    float num1, num2;
+    Calculadora* operacion;
+
+    cout << "BIENVENIDO A LA CALCULADORA Clonada por un Estudiante" << endl;
+    cout << "Ingrese una opcion:" << endl;
+    cout << "1. Sumar\n";
+    cout << "2. Restar\n";
+    cout << "3. Multiplicar\n";
+    cout << "0. SALIR";	
+
+    cin >> opt;
+
+
+	system("pause");
+	system("cls");
+
+    while(opt!=0){
+
+        switch(opt){
+            case 1:
+                cout << "Ingrese num 1: "; cin >> num1;
+                cout << "Ingrese num 2: "; cin >> num2;
+                operacion = new Calculadora(num1, num2);
+                operacion->sumar();
+				system("pause");
+                system("cls");
+                break;
+            case 2:
+                cout << "Ingrese num 1: "; cin >> num1;
+                cout << "Ingrese num 2: "; cin >> num2;
+                operacion = new Calculadora(num1, num2);
+                operacion->restar();
+                system("pause");
+                system("cls");
+                break;
+            case 3:
+                cout << "Ingrese num 1: "; cin >> num1;
+                cout << "Ingrese num 2: "; cin >> num2;
+                operacion = new Calculadora(num1, num2);
+                operacion->multiplicar();
+                system("pause");
+                system("cls");
+                break;
+        }
+
+        cout << "BIENVENIDO A LA CALCULADORA Clonada por un Estudiante" << endl;
+        cout << "Ingrese una opcion:" << endl;
+        cout << "1. Sumar\n";
+        cout << "2. Restar\n";
+        cout << "3. Multiplicar\n";
+	cout << "0. SALIR";    
+        cin >> opt;
+        system("pause");
+        system("cls");
+    }
+
+    return 0;
+}
+
+void Calculadora::sumar() {
+    float result = x + y;
+    cout << "Suma = " << result << endl;
+}
+void Calculadora::restar() {
+    float result = x - y;
+    cout << "Resta = " << result << endl;
+}
+void Calculadora::multiplicar() {
+    float result = x*y;
+    cout << "Multiplicacion = " << result << endl;
+}
